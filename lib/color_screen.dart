@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ColorScreen extends StatelessWidget {
-  const ColorScreen({Key? key}) : super(key: key);
-
+  ColorScreen(this.screenColor, {Key? key}) : super(key: key);
+  Color screenColor;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(leading: BackButton(), backgroundColor: screenColor),
+      body: Container(color: screenColor),
+    );
   }
 }
